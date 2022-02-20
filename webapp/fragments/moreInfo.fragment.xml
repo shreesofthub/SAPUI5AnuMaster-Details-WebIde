@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:cC="hckt.validation.controls">
+	<Title text="More Information about-{name}"></Title>
+	<!--<cC:CustomControl></cC:CustomControl>-->
+	<cC:CustomControl textDisplay="Wow Text Displaying through Custom Control"></cC:CustomControl>
+	<form:SimpleForm>
+		<form:content>
+			<Label text="Product Id"></Label>
+			<Text id="idProductId"></Text>
+			<Label text="Description"></Label>
+			<Text text="{instructions}"></Text>
+			<Label text="Category of Fruit"></Label>
+			<Text text="{category}"></Text>
+		</form:content>
+	</form:SimpleForm>
+</core:FragmentDefinition>

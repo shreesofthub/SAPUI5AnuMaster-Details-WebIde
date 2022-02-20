@@ -1,0 +1,27 @@
+<core:mvc controllerName="hckt.validation.controller.detail" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Page showNavButton="true" navButtonPress="onBack" title="Details of Selected list Item">
+		<content>
+			<ObjectHeader icon="{photo}" number="{price}" numberUnit="{unit}" title="{name}"></ObjectHeader>
+			<IconTabBar>
+				<items>
+					<IconTabFilter icon="sap-icon://message-information" text="More Information" key="MoreInfo">
+						<core:Fragment type="XML" fragmentName="hckt.validation.fragments.moreinfo"></core:Fragment>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://supplier" text="Suppliers Information" key="Suppler">
+						<core:Fragment type="XML" fragmentName="hckt.validation.fragments.supplier"></core:Fragment>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://map" text="City-Suppled from" key="City">
+						<core:Fragment type="XML" fragmentName="hckt.validation.fragments.city"></core:Fragment>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Accept" type="Accept" press="onAccept"></Button>
+				<Button text="Reject" type="Reject" press="onReject"></Button>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</core:mvc>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>F4 Helps and 3rd View Navigation</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Design a UI5 Application with F4 help,Fragments and 3rd view navigation">
+		<meta name="description" content="Master and Detail View- Views Navigation,F4 Help,Filter,DropDown,Input Validation,Search">
+		<meta name="author" content="Sridhar Bollabathula">
+	<script id="sap-ui-bootstrap"
+			src="https://sapui5.hana.ondemand.com/1.91.0/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-resourceroots='{"hckt.validation":"./"}'
+			data-sap-ui-xx-bindingSyntax="complex">
+	</script>
+	<script	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQJIDDCAoG7QDfsuTpkViGN2xI6FKJ9yU"> </script>
+	<!--AIzaSyAQJIDDCAoG7QDfsuTpkViGN2xI6FKJ9yU-->
+	<script>
+//Below Commented code, wrote in Component.js File under createContent method.	
+		// var oAppView = new sap.ui.view("idApp",{
+		// 	viewName:"hckt.validation.view.app",
+		// 	type:sap.ui.core.mvc.ViewType.XML
+		// });
+//If we write this above commented lines in Component.js ,along with this below lines of code required.
+		var compContainer = new sap.ui.core.ComponentContainer({
+			name:"hckt.validation"
+		});
+		compContainer.placeAt("placeHolder");
+	</script>
+	</head> 
+	<body class="sapUiBody">
+		<div id="placeHolder"></div>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Title text="Flower Suppliers Details"></Title>
+	<Table alternateRowColors="true" items="{/supplier}">
+		<headerToolbar>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://filter" press="onPressFilter"></Button>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Supplier Name"></Text>
+			</Column>
+			<Column>
+				<Text text="From"></Text>
+			</Column>
+			<Column>
+				<Text text="Since"></Text>
+			</Column>
+			<Column>
+				<Text text="contact No"></Text>
+			</Column>
+			<Column>
+				<Text text="owner Name"></Text>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Navigation" press="onItemPress">
+				<cells>
+					<Text text="{name}"></Text>
+					<Input value="{from}" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="onValueHelp"></Input>
+					<Text text="{since}"></Text>
+					<Text text="{contactNo}"></Text>
+					<Text text="{owner}"></Text>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

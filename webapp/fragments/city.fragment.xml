@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:control="hckt.validation.controls">
+	<SearchField search="onGoogleSearch"></SearchField>
+			<control:CustomControl textDisplay="GoogleMap"></control:CustomControl>
+	<Select items="{/city}">
+		<core:Item key="{name}" text="{name}"></core:Item>
+	</Select>
+	<form:SimpleForm>
+		<Label text="Input Validation"></Label>
+		<Input id="idInput"></Input>
+		<Button text="validation" press="onValidation"></Button>
+		<DatePicker id="idDate"></DatePicker>
+	</form:SimpleForm>
+</core:FragmentDefinition>

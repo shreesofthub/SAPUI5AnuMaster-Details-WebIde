@@ -1,0 +1,111 @@
+{
+	"sap.app": {
+		"id": "hckt.validation",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDesc}}",
+		"tags": {
+			"keywords": ["{{kw1}}", "{{kw2}}"]
+		},
+		"ach": "MM-PO"
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_bluecrystal"],
+		"icons": {
+			"icon": "sap-icon://accelerated"
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.44",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.44"
+				},
+				"sap.m": {
+					"minVersion": "1.44"
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.44"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css",
+				"id": "my css"
+			}]
+		},
+		"models": {
+			"": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/mockData/flowersData.json",
+				"preload": false
+			},
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			}
+		},
+		"rootView":{
+			"viewName":"hckt.validation.view.app",
+			"id":"idApp",
+			"type":"XML"
+		},
+		"routing": {
+			"config": {
+				"routerClass":"sap.m.routing.Router",
+				"viewPath": "hckt.validation.view",
+				"viewType":"XML",
+				"controlId":"idSplit"
+			},
+			"routes": [
+				{
+					"pattern":"", 
+					"name":"master",
+					"target":["overView","dummyView"]
+				},
+				{
+					"pattern":"flower/{id}",
+					"name":"detail",
+					"target":["overView","detailView"]
+				}
+				],
+				"targets":{
+					"overView":{
+						"viewName":"master",
+						"viewId":"idMaster",
+						"controlAggregation":"masterPages",
+						"viewLevel":1
+					},
+					"dummyView":{
+						"viewName":"dummy",
+						"viewId":"idDummy",
+						"controlAggregation":"detailPages",
+						"viewLevel":1
+					},
+					"detailView":{
+						"viewName":"detail",
+						"viewId":"idDetail",
+						"controlAggregation":"detailPages",
+						"viewLevel":2
+					}
+				}
+		}
+	},
+	"_version": "1.6.0"
+}

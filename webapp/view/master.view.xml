@@ -1,0 +1,33 @@
+<core:mvc controllerName="hckt.validation.controller.master" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Page title="{i18n>masterTitle}">
+		<headerContent>
+			<Button icon="sap-icon://open-command-field" press="onNext"></Button>
+		</headerContent>
+		<subHeader>
+			<Toolbar>
+				<SearchField showRefreshButton="true" search="onRefresh" liveChange="onLiveChange"></SearchField>
+				<Button icon="sap-icon://filter" press="onFilter"></Button>
+			</Toolbar>
+		</subHeader>
+		<List items="{/flowers}" mode="SingleSelectMaster" selectionChange="onItemPress" id="idList">
+			<ObjectListItem icon="{photo}" intro="{productId} - {instructions}" number="{price}" numberUnit="{unit}" title="{name}"
+							numberState="{path: 'price',
+										  formatter:'.formatter.setStatus'}">
+				<ObjectAttribute text="{category}" title="Fruit Category"></ObjectAttribute>
+				<firstStatus>
+					<ObjectStatus text="{= ${unit} === 'INR' ? '6AM-6PM' : '10PM-9AM'}" title="Timings" ></ObjectStatus>
+				</firstStatus>
+				<secondStatus>
+					<ObjectStatus text="{= ${unit} === 'INR' ? 'Yes' : 'No' }" title="Availability" 
+								  state="{= ${unit} === 'INR' ? 'Success' : 'Warning' }"></ObjectStatus>
+				</secondStatus>
+			</ObjectListItem>
+		</List>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://sort" press="onSort"></Button>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</core:mvc>

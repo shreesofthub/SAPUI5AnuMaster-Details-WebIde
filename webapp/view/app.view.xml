@@ -1,0 +1,5 @@
+<core:mvc controllerName="hckt.validation.controller.app" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<SplitApp id="idSplit">
+		
+	</SplitApp>
+</core:mvc>
